@@ -9,7 +9,7 @@
 # modified, propagated, or distributed except according to the terms contained
 # in the LICENSE file.
 
-from .transaction import Transaction
+from bitcoinlib.transaction import Transaction
 from .block_header import BlockHeader
 from .utils import format_hash, decode_varint, double_sha256
 
@@ -26,7 +26,7 @@ def get_block_transactions(raw_hex):
     n_transactions, offset = decode_varint(transaction_data)
 
     for i in range(n_transactions):
-        transaction = Transaction.from_hex(transaction_data[offset:])
+        transaction = Transaction.import_raw(transaction_data[offset:])
         yield transaction
 
         # Skipping to the next transaction
