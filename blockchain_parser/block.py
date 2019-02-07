@@ -9,7 +9,7 @@
 # modified, propagated, or distributed except according to the terms contained
 # in the LICENSE file.
 
-from bitcoin.bitcoinlib.transaction import Transaction
+from bitcoinlib.transactions import Transaction
 from .block_header import BlockHeader
 from .utils import format_hash, decode_varint, double_sha256
 
